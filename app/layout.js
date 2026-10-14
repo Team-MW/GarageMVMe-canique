@@ -1,7 +1,14 @@
 import "./globals.css";
 import { site } from "@/lib/site";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#090a0c",
+};
+
 export const metadata = {
+  metadataBase: new URL(site.url),
   title: "HM Auto 24 | Garage Mécanique & Diagnostic Rapide à Bergerac",
   description: "Garage automobile HM Auto 24 à Bergerac. Diagnostic immédiat à la valise, mécanique générale, remplacement de batterie à domicile, réactivité et devis clair sans attente.",
   keywords: [
@@ -14,7 +21,6 @@ export const metadata = {
     "39 route pierre pinson"
   ],
   authors: [{ name: "HM Auto 24" }],
-  viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   openGraph: {
     title: "HM Auto 24 | Votre Garage Automobile à Bergerac",
