@@ -8,9 +8,8 @@ export default function ContactLocation() {
     }}>
       <div className="container">
         
-        <div style={{
+        <div className="contact-grid" style={{
           display: "grid",
-          gridTemplateColumns: "1.1fr 0.9fr",
           gap: "2.5rem",
           alignItems: "stretch"
         }}>
@@ -19,7 +18,7 @@ export default function ContactLocation() {
             background: "var(--color-surface)",
             border: "1px solid var(--color-border)",
             borderRadius: "12px",
-            padding: "2.5rem",
+            padding: "clamp(1.5rem, 3vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between"
@@ -30,7 +29,7 @@ export default function ContactLocation() {
               </div>
               <h2 style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
+                fontSize: "clamp(1.6rem, 3.2vw, 2.5rem)",
                 fontWeight: 900,
                 textTransform: "uppercase",
                 fontStyle: "italic",
@@ -131,7 +130,7 @@ export default function ContactLocation() {
 
             {/* CTAs */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-              <a href={site.phoneHref} className="btn-primary" style={{ flex: 1, minWidth: "200px" }}>
+              <a href={site.phoneHref} className="btn-primary" style={{ flex: 1, minWidth: "180px", textAlign: "center" }}>
                 <span>Appeler maintenant</span>
               </a>
               <a
@@ -139,7 +138,7 @@ export default function ContactLocation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
-                style={{ flex: 1, minWidth: "180px" }}
+                style={{ flex: 1, minWidth: "180px", textAlign: "center" }}
               >
                 <span>Ouvrir l&apos;itinéraire GPS</span>
               </a>
@@ -154,10 +153,9 @@ export default function ContactLocation() {
             overflow: "hidden",
             display: "flex",
             flexDirection: "column",
-            minHeight: "450px"
+            minHeight: "420px"
           }}>
-            {/* Embedded Google Maps view for Bergerac */}
-            <div style={{ flex: 1, width: "100%", minHeight: "320px", position: "relative" }}>
+            <div style={{ flex: 1, width: "100%", minHeight: "300px", position: "relative" }}>
               <iframe
                 title="Localisation HM Auto 24 Bergerac"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45465.94073352726!2d0.45781358963287664!3d44.85408933560706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ab2a549911ea11%3A0x406651748138980!2sBergerac!5e0!3m2!1sfr!2sfr!4v1710000000000!5m2!1sfr!2sfr"
@@ -169,16 +167,16 @@ export default function ContactLocation() {
               />
             </div>
 
-            <div style={{ padding: "1.5rem", background: "#0c0d11", borderTop: "1px solid var(--color-border)" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ padding: "1.25rem 1.5rem", background: "#0c0d11", borderTop: "1px solid var(--color-border)" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
                 <div>
                   <div style={{ fontSize: "0.75rem", color: "var(--color-red)", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.08em" }}>
                     Dordogne (24)
                   </div>
-                  <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#fff", fontFamily: "var(--font-display)" }}>
+                  <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#fff", fontFamily: "var(--font-display)" }}>
                     HM AUTO 24 • BERGERAC
                   </div>
-                  <div style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>
+                  <div style={{ fontSize: "0.82rem", color: "var(--color-text-muted)" }}>
                     39 Route Pierre Pinson, 24100 Bergerac
                   </div>
                 </div>

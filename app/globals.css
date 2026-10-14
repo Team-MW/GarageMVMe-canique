@@ -66,7 +66,7 @@ img {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
 }
 
 /* Nav Link Hover */
@@ -211,9 +211,54 @@ img {
   letter-spacing: 0.05em;
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  nav {
+/* Layout Grids */
+.hero-grid {
+  grid-template-columns: 1.25fr 0.95fr;
+}
+.hero-preview-strip {
+  grid-template-columns: 1.2fr 1fr;
+}
+.contact-grid {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+/* ========================================================
+   RESPONSIVE & MOBILE BURGER MENU STYLES
+   ======================================================== */
+@media (max-width: 920px) {
+  .desktop-nav {
     display: none !important;
+  }
+  .desktop-phone-btn {
+    display: none !important;
+  }
+  .mobile-phone-quick {
+    display: flex !important;
+  }
+  .burger-button {
+    display: flex !important;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-preview-strip {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .slant-tag {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.75rem;
+    letter-spacing: 0.08em;
   }
 }
