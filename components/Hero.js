@@ -15,17 +15,17 @@ export default function Hero() {
         top: "-150px",
         left: "50%",
         transform: "translateX(-50%)",
-        width: "800px",
-        height: "500px",
-        background: "radial-gradient(ellipse at center, rgba(225, 29, 42, 0.15) 0%, transparent 70%)",
+        width: "900px",
+        height: "550px",
+        background: "radial-gradient(ellipse at center, rgba(225, 29, 42, 0.18) 0%, transparent 70%)",
         pointerEvents: "none",
         zIndex: 0
       }} />
 
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         
-        {/* Top Tagline from poster */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.25rem" }}>
+        {/* Top Tagline */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.25rem", flexWrap: "wrap" }}>
           <div style={{ width: "3px", height: "20px", backgroundColor: "var(--color-red)" }} />
           <p style={{
             fontFamily: "var(--font-display)",
@@ -35,7 +35,7 @@ export default function Hero() {
             textTransform: "uppercase",
             color: "#fff"
           }}>
-            RÉACTIVITÉ. SÉRIEUX. <span style={{ color: "var(--color-red)" }}>PERFORMANCE.</span>
+            GARAGE MV MÉCANIQUE • <span style={{ color: "var(--color-red)" }}>CASTRES (81)</span> • PAR VINCENT
           </p>
         </div>
 
@@ -44,33 +44,33 @@ export default function Hero() {
           display: "grid",
           gap: "2.5rem",
           alignItems: "start",
-          marginBottom: "2rem"
+          marginBottom: "2.5rem"
         }}>
           {/* Left Column: Headlines */}
           <div>
             <h1 style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(2.4rem, 5.5vw, 4.8rem)",
+              fontSize: "clamp(2.4rem, 5.2vw, 4.6rem)",
               fontWeight: 900,
-              lineHeight: 0.95,
+              lineHeight: 0.96,
               letterSpacing: "-0.01em",
               textTransform: "uppercase",
               fontStyle: "italic",
               marginBottom: "1.5rem"
             }}>
               <span style={{ display: "block", color: "#ffffff" }}>
-                REPRENEZ LA ROUTE
+                VOTRE VOITURE ENTRE
               </span>
               <span style={{
                 display: "block",
                 color: "var(--color-red)",
-                textShadow: "0 0 40px rgba(225, 29, 42, 0.45)"
+                textShadow: "0 0 45px rgba(225, 29, 42, 0.5)"
               }}>
-                SANS ATTENDRE.
+                DE BONNES MAINS.
               </span>
             </h1>
 
-            {/* Poster-inspired black ribbon with red racing slashes */}
+            {/* Poster-inspired black ribbon */}
             <div style={{
               display: "inline-flex",
               alignItems: "center",
@@ -81,7 +81,7 @@ export default function Hero() {
               padding: "0.75rem 1.25rem",
               transform: "skewX(-10deg)",
               boxShadow: "0 8px 24px rgba(0,0,0,0.6)",
-              marginBottom: "1.8rem",
+              marginBottom: "1.6rem",
               maxWidth: "100%"
             }}>
               <div style={{ transform: "skewX(10deg)" }}>
@@ -93,7 +93,7 @@ export default function Hero() {
                   textTransform: "uppercase",
                   color: "#fff",
                 }}>
-                  HM AUTO 24 À BERGERAC
+                  MÉCANIQUE GÉNÉRALE & RÉVISIONS COMPLÈTES
                 </span>
                 <span style={{
                   color: "var(--color-red)",
@@ -102,7 +102,7 @@ export default function Hero() {
                   marginLeft: "0.6rem",
                   textTransform: "uppercase"
                 }}>
-                  • PRISE EN CHARGE IMMÉDIATE
+                  • DÉPANNAGE EXPRESS VACANCIERS
                 </span>
               </div>
               <div className="racing-slash" style={{ transform: "skewX(10deg)" }}>
@@ -115,49 +115,65 @@ export default function Hero() {
               fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
               color: "var(--color-text-muted)",
               lineHeight: 1.6,
-              maxWidth: "560px",
+              maxWidth: "580px",
               marginBottom: "2rem"
             }}>
-              Mécanique générale toutes marques et diagnostic immédiat à la valise. Déplacement possible à domicile sur Bergerac pour vos urgences de démarrage et batterie.
+              Bienvenue chez <strong>Vincent</strong> au <strong>Garage MV Mécanique</strong> à Castres. Révision complète, courroie, embrayage, freinage, ou dépannage rapide d&apos;urgence pour automobilistes et vacanciers (pompe à eau, crevaison...). Un accueil chaleureux et des tarifs honnêtes.
             </p>
 
-            {/* CTA Group */}
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1rem" }}>
-              <a href={site.phoneHref} className="btn-primary" style={{ padding: "0.95rem 1.8rem", fontSize: "1rem" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
-                </svg>
-                <span>Appeler le {site.phoneDisplay}</span>
+            {/* Big Prominent Call Button + RDV button */}
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
+              {/* GROS BOUTON APPELER */}
+              <a
+                href={site.phoneHref}
+                className="btn-call-hero"
+                title="Appeler Vincent directement"
+              >
+                <div className="btn-call-hero-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+                  </svg>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", textAlign: "left" }}>
+                  <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#ffe4e6", fontWeight: 700 }}>
+                    Ligne Directe Atelier
+                  </span>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 900, letterSpacing: "0.04em", color: "#fff" }}>
+                    APPELER LE {site.phoneDisplay}
+                  </span>
+                </div>
               </a>
 
-              <a href="#services" className="btn-secondary">
-                <span>Découvrir nos services</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+              {/* Prise de RDV en ligne CTA */}
+              <a
+                href="#rdv"
+                className="btn-secondary"
+                style={{ padding: "1rem 1.6rem", fontSize: "0.95rem" }}
+              >
+                <span>📅 Prendre RDV en ligne</span>
               </a>
             </div>
 
-            {/* Google Rating 5/5 Badge */}
+            {/* Google Rating 4.9/5 Badge */}
             <div style={{
               display: "inline-flex",
               alignItems: "center",
               gap: "0.85rem",
-              marginTop: "2rem",
-              padding: "0.55rem 1rem",
-              background: "rgba(255, 255, 255, 0.03)",
-              border: "1px solid var(--color-border)",
-              borderRadius: "30px"
+              padding: "0.6rem 1.25rem",
+              background: "rgba(255, 255, 255, 0.04)",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
+              borderRadius: "30px",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.3)"
             }}>
               <div style={{ display: "flex", gap: "3px", color: "#f59e0b" }}>
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#fff" }}>
-                5.0 / 5 • <span style={{ color: "var(--color-text-muted)", fontWeight: 500 }}>7 avis Google</span>
+              <div style={{ fontSize: "0.88rem", fontWeight: 700, color: "#fff" }}>
+                {site.rating.score} / 5 • <span style={{ color: "#f3f4f6", fontWeight: 600 }}>{site.rating.reviewsCount} avis vérifiés Google</span>
               </div>
             </div>
           </div>
@@ -166,7 +182,7 @@ export default function Hero() {
           <div style={{
             display: "flex",
             flexDirection: "column",
-            gap: "1.4rem",
+            gap: "1.3rem",
             background: "rgba(18, 20, 24, 0.75)",
             border: "1px solid var(--color-border)",
             borderRadius: "12px",
@@ -174,49 +190,12 @@ export default function Hero() {
             backdropFilter: "blur(8px)",
             boxShadow: "0 10px 35px rgba(0,0,0,0.4)"
           }}>
-            {/* Feature 1 */}
+            {/* Feature 1: Dépannage Urgence */}
             <div style={{ display: "flex", alignItems: "flex-start", gap: "1.1rem" }}>
               <div style={{
-                width: "46px",
-                height: "46px",
-                minWidth: "46px",
-                borderRadius: "50%",
-                backgroundColor: "var(--color-red)",
-                boxShadow: "0 0 18px var(--color-red-glow)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#fff"
-              }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <path d="M12 14l3-3" />
-                  <path d="M3.34 19a10 10 0 1117.32 0" />
-                </svg>
-              </div>
-              <div>
-                <h3 style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1rem",
-                  fontWeight: 800,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.04em",
-                  color: "#fff",
-                  lineHeight: 1.2
-                }}>
-                  DIAGNOSTIC IMMÉDIAT
-                </h3>
-                <p style={{ fontSize: "0.84rem", color: "var(--color-text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>
-                  Pas de délai d&apos;une semaine. Recherche de panne et passage à la valise sans traîner.
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 2 */}
-            <div style={{ display: "flex", alignItems: "flex-start", gap: "1.1rem" }}>
-              <div style={{
-                width: "46px",
-                height: "46px",
-                minWidth: "46px",
+                width: "48px",
+                height: "48px",
+                minWidth: "48px",
                 borderRadius: "50%",
                 backgroundColor: "var(--color-red)",
                 boxShadow: "0 0 18px var(--color-red-glow)",
@@ -231,29 +210,32 @@ export default function Hero() {
                 </svg>
               </div>
               <div>
-                <h3 style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1rem",
-                  fontWeight: 800,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.04em",
-                  color: "#fff",
-                  lineHeight: 1.2
-                }}>
-                  DÉPANNAGE À DOMICILE
-                </h3>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                  <h3 style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "1rem",
+                    fontWeight: 800,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.04em",
+                    color: "#fff",
+                    lineHeight: 1.2
+                  }}>
+                    DÉPANNAGE RAPIDE VACANCIERS
+                  </h3>
+                  <span className="badge-red" style={{ fontSize: "0.65rem", padding: "1px 5px" }}>URGENCE</span>
+                </div>
                 <p style={{ fontSize: "0.84rem", color: "var(--color-text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>
-                  Votre véhicule ne démarre plus ? Intervention sur place à Bergerac (pose batterie, démarrage).
+                  De passage à Castres ? Prise en charge express : pompe à eau, crevaison, surchauffe moteur.
                 </p>
               </div>
             </div>
 
-            {/* Feature 3 */}
+            {/* Feature 2: Mécanique Générale */}
             <div style={{ display: "flex", alignItems: "flex-start", gap: "1.1rem" }}>
               <div style={{
-                width: "46px",
-                height: "46px",
-                minWidth: "46px",
+                width: "48px",
+                height: "48px",
+                minWidth: "48px",
                 borderRadius: "50%",
                 backgroundColor: "var(--color-red)",
                 boxShadow: "0 0 18px var(--color-red-glow)",
@@ -276,20 +258,20 @@ export default function Hero() {
                   color: "#fff",
                   lineHeight: 1.2
                 }}>
-                  MÉCANIQUE MINUTIEUSE
+                  RÉVISIONS & MÉCANIQUE COMPLÈTE
                 </h3>
                 <p style={{ fontSize: "0.84rem", color: "var(--color-text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>
-                  Entretien soigné, distribution, embrayage, freinage. Rigueur et passion de l&apos;automobile.
+                  Entretien constructeur, kit distribution, embrayage, freinage. Toutes marques avec pièces de qualité.
                 </p>
               </div>
             </div>
 
-            {/* Feature 4 */}
+            {/* Feature 3: RDV en Ligne Direct */}
             <div style={{ display: "flex", alignItems: "flex-start", gap: "1.1rem" }}>
               <div style={{
-                width: "46px",
-                height: "46px",
-                minWidth: "46px",
+                width: "48px",
+                height: "48px",
+                minWidth: "48px",
                 borderRadius: "50%",
                 backgroundColor: "var(--color-red)",
                 boxShadow: "0 0 18px var(--color-red-glow)",
@@ -299,8 +281,10 @@ export default function Hero() {
                 color: "#fff"
               }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 6v6l4 2" />
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
                 </svg>
               </div>
               <div>
@@ -313,10 +297,46 @@ export default function Hero() {
                   color: "#fff",
                   lineHeight: 1.2
                 }}>
-                  PRIX JUSTE & DEVIS CLAIR
+                  RENDEZ-VOUS EN LIGNE DIRECT
                 </h3>
                 <p style={{ fontSize: "0.84rem", color: "var(--color-text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>
-                  Aucune réparation imposée sans accord. Transparence totale pour un démarrage en confiance.
+                  Réservez votre créneau en 1 minute sur le site selon vos disponibilités, sans attente.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature 4: Accueil & Prix */}
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "1.1rem" }}>
+              <div style={{
+                width: "48px",
+                height: "48px",
+                minWidth: "48px",
+                borderRadius: "50%",
+                backgroundColor: "var(--color-red)",
+                boxShadow: "0 0 18px var(--color-red-glow)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff"
+              }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                </svg>
+              </div>
+              <div>
+                <h3 style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "1rem",
+                  fontWeight: 800,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.04em",
+                  color: "#fff",
+                  lineHeight: 1.2
+                }}>
+                  ACCUEIL SYMPA & PRIX RAISONNABLES
+                </h3>
+                <p style={{ fontSize: "0.84rem", color: "var(--color-text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>
+                  Vincent vous conseille en toute franchise. Devis clair et tarifs honnêtes appréciés par ses 48 avis.
                 </p>
               </div>
             </div>
@@ -336,7 +356,7 @@ export default function Hero() {
         }}>
           <Image
             src="/images/hero.jpg"
-            alt="HM Auto 24 - Mécanique et Performance à Bergerac"
+            alt="Garage MV Mécanique Castres - Atelier de Vincent"
             fill
             priority
             style={{ objectFit: "cover", objectPosition: "center" }}
@@ -344,7 +364,7 @@ export default function Hero() {
           <div style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.2) 50%, rgba(9,10,12,0.6) 100%)",
+            background: "linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.3) 50%, rgba(9,10,12,0.7) 100%)",
             pointerEvents: "none"
           }} />
 
@@ -361,21 +381,34 @@ export default function Hero() {
             gap: "1rem"
           }}>
             <div>
-              <span className="badge-red" style={{ marginBottom: "0.5rem" }}>GARAGE RÉCENT & MOTIVÉ</span>
+              <span className="badge-red" style={{ marginBottom: "0.5rem" }}>
+                ATELIER CASTRES (81) • 49 CHEMIN DES MEULES
+              </span>
               <h2 style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(1.2rem, 3vw, 2rem)",
+                fontSize: "clamp(1.2rem, 3vw, 2.1rem)",
                 fontWeight: 800,
                 color: "#fff",
                 textTransform: "uppercase",
                 fontStyle: "italic",
                 lineHeight: 1.15
               }}>
-                LE PROFESSIONNALISME D&apos;UN PASSIONNÉ.
+                L&apos;EFFICACITÉ & L&apos;HONNÊTETÉ D&apos;UN VRAI MÉCANICIEN.
               </h2>
             </div>
-            <a href={site.phoneHref} className="btn-primary" style={{ padding: "0.75rem 1.4rem", fontSize: "0.9rem" }}>
-              Appel direct : {site.phoneDisplay}
+            <a
+              href={site.phoneHref}
+              className="btn-primary"
+              style={{
+                padding: "0.85rem 1.6rem",
+                fontSize: "0.95rem",
+                boxShadow: "0 0 25px rgba(225, 29, 42, 0.6)"
+              }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+              </svg>
+              <span>Appeler Vincent : {site.phoneDisplay}</span>
             </a>
           </div>
         </div>
@@ -393,20 +426,20 @@ export default function Hero() {
           {/* 3 Photos row */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem" }}>
             <div style={{ position: "relative", height: "105px", borderRadius: "6px", overflow: "hidden", border: "1px solid var(--color-border)" }}>
-              <Image src="/images/atelier.jpg" alt="Atelier mécanique HM Auto 24" fill style={{ objectFit: "cover" }} />
-              <div style={{ position: "absolute", bottom: "4px", left: "6px", fontSize: "0.68rem", fontWeight: 700, fontFamily: "var(--font-display)", color: "#fff", background: "rgba(0,0,0,0.7)", padding: "2px 5px", borderRadius: "3px" }}>
-                ATELIER
+              <Image src="/images/atelier.jpg" alt="Atelier mécanique Garage MV Mécanique Castres" fill style={{ objectFit: "cover" }} />
+              <div style={{ position: "absolute", bottom: "4px", left: "6px", fontSize: "0.68rem", fontWeight: 700, fontFamily: "var(--font-display)", color: "#fff", background: "rgba(0,0,0,0.75)", padding: "2px 5px", borderRadius: "3px" }}>
+                RÉVISIONS
               </div>
             </div>
             <div style={{ position: "relative", height: "105px", borderRadius: "6px", overflow: "hidden", border: "1px solid var(--color-border)" }}>
-              <Image src="/images/freinage.jpg" alt="Freinage disques plaquettes" fill style={{ objectFit: "cover" }} />
-              <div style={{ position: "absolute", bottom: "4px", left: "6px", fontSize: "0.68rem", fontWeight: 700, fontFamily: "var(--font-display)", color: "#fff", background: "rgba(0,0,0,0.7)", padding: "2px 5px", borderRadius: "3px" }}>
-                FREINAGE
+              <Image src="/images/freinage.jpg" alt="Freinage et pneumatiques Castres" fill style={{ objectFit: "cover" }} />
+              <div style={{ position: "absolute", bottom: "4px", left: "6px", fontSize: "0.68rem", fontWeight: 700, fontFamily: "var(--font-display)", color: "#fff", background: "rgba(0,0,0,0.75)", padding: "2px 5px", borderRadius: "3px" }}>
+                CREVAISON / FREINS
               </div>
             </div>
             <div style={{ position: "relative", height: "105px", borderRadius: "6px", overflow: "hidden", border: "1px solid var(--color-border)" }}>
-              <Image src="/images/diagnostic.jpg" alt="Valise diagnostic électronique" fill style={{ objectFit: "cover" }} />
-              <div style={{ position: "absolute", bottom: "4px", left: "6px", fontSize: "0.68rem", fontWeight: 700, fontFamily: "var(--font-display)", color: "#fff", background: "rgba(0,0,0,0.7)", padding: "2px 5px", borderRadius: "3px" }}>
+              <Image src="/images/diagnostic.jpg" alt="Valise diagnostic électronique Castres" fill style={{ objectFit: "cover" }} />
+              <div style={{ position: "absolute", bottom: "4px", left: "6px", fontSize: "0.68rem", fontWeight: 700, fontFamily: "var(--font-display)", color: "#fff", background: "rgba(0,0,0,0.75)", padding: "2px 5px", borderRadius: "3px" }}>
                 DIAGNOSTIC
               </div>
             </div>
@@ -421,11 +454,11 @@ export default function Hero() {
               fontStyle: "italic",
               lineHeight: 1.2
             }}>
-              <span style={{ color: "#fff" }}>LA RIGUEUR MÉCANIQUE. </span>
-              <span style={{ color: "var(--color-red)" }}>LA CONFIANCE EN PLUS.</span>
+              <span style={{ color: "#fff" }}>RÉACTIVITÉ & SOIN. </span>
+              <span style={{ color: "var(--color-red)" }}>REPARTEZ L&apos;ESPRIT TRANQUILLE.</span>
             </h3>
             <p style={{ fontSize: "0.88rem", color: "var(--color-text-muted)", marginTop: "0.5rem", lineHeight: 1.5 }}>
-              Chaque véhicule est inspecté avec soin. Pas de surcoût, pas d&apos;attente inutile : une vraie écoute pour résoudre votre problème rapidement.
+              Que vous soyez habitant de Castres pour votre entretien régulier ou vacancier immobilisé par une panne imprévue, Vincent met tout en œuvre pour vous dépanner vite et bien.
             </p>
           </div>
         </div>

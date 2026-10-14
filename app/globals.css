@@ -10,7 +10,7 @@
 
   --color-red: #e11d2a;
   --color-red-dark: #b8141f;
-  --color-red-glow: rgba(225, 29, 42, 0.25);
+  --color-red-glow: rgba(225, 29, 42, 0.35);
 
   --color-text-main: #f3f4f6;
   --color-text-muted: #9ca3af;
@@ -170,7 +170,7 @@ img {
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(225, 29, 42, 0.45);
+  box-shadow: 0 8px 30px rgba(225, 29, 42, 0.55);
   background: linear-gradient(135deg, #ef2332 0%, #c8101e 100%);
 }
 
@@ -195,6 +195,81 @@ img {
   background: rgba(255, 255, 255, 0.12);
   border-color: #ffffff;
   transform: translateY(-2px);
+}
+
+/* GROS BOUTON APPELER (HERO & SECTIONS) */
+.btn-call-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #e11d2a 0%, #a80f1a 100%);
+  color: #ffffff;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(225, 29, 42, 0.55), 0 0 20px rgba(225, 29, 42, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-call-hero:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(225, 29, 42, 0.7);
+  background: linear-gradient(135deg, #f02533 0%, #b9121e 100%);
+}
+
+.btn-call-hero-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  animation: callIconPulse 2s infinite ease-in-out;
+}
+
+@keyframes callIconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Header Call Button */
+.btn-call-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, var(--color-red) 0%, #99101a 100%);
+  color: #ffffff;
+  padding: 0.55rem 1.15rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(225, 29, 42, 0.4);
+  transition: all 0.25s ease;
+  position: relative;
+}
+.btn-call-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(225, 29, 42, 0.6);
+}
+
+.call-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: dotGlow 1.8s infinite;
+}
+
+@keyframes dotGlow {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.6; transform: scale(0.9); }
 }
 
 /* Badge pill */
@@ -246,6 +321,9 @@ img {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
+  .mobile-floating-bar {
+    display: flex !important;
+  }
 }
 
 @media (max-width: 860px) {
@@ -260,5 +338,9 @@ img {
     font-size: 0.72rem;
     padding: 0.35rem 0.75rem;
     letter-spacing: 0.08em;
+  }
+  .btn-call-hero {
+    width: 100%;
+    justifyContent: center;
   }
 }

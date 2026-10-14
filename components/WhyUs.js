@@ -27,9 +27,9 @@ export default function WhyUs() {
             backgroundColor: "var(--color-red)"
           }} />
 
-          <div style={{ maxWidth: "720px", marginBottom: "3rem" }}>
+          <div style={{ maxWidth: "750px", marginBottom: "3rem" }}>
             <div className="slant-tag" style={{ marginBottom: "1rem" }}>
-              <span>LA DIFFÉRENCE HM AUTO 24</span>
+              <span>LES ENGAGEMENTS DE VINCENT</span>
             </div>
             <h2 style={{
               fontFamily: "var(--font-display)",
@@ -40,7 +40,7 @@ export default function WhyUs() {
               lineHeight: 1.15,
               color: "#fff"
             }}>
-              POURQUOI LES CONDUCTEURS DE BERGERAC FONT CONFIANCE À <span style={{ color: "var(--color-red)" }}>HM AUTO 24</span> ?
+              POURQUOI LES CONDUCTEURS DE CASTRES FONT CONFIANCE AU <span style={{ color: "var(--color-red)" }}>GARAGE MV MÉCANIQUE</span> ?
             </h2>
             <p style={{
               color: "var(--color-text-muted)",
@@ -48,7 +48,7 @@ export default function WhyUs() {
               fontSize: "1.05rem",
               lineHeight: 1.6
             }}>
-              Un garage récent mené par un mécanicien passionné et ultra-réactif. Quand d&apos;autres vous donnent rendez-vous dans 10 jours, nous trouvons la solution tout de suite.
+              Un atelier à taille humaine dirigé par <strong>Vincent</strong>. Ici, pas de discours commercial superflu : une écoute bienveillante, une grande réactivité pour les pannes urgentes et des prix toujours honnêtes.
             </p>
           </div>
 
@@ -82,10 +82,10 @@ export default function WhyUs() {
                 textTransform: "uppercase",
                 marginBottom: "0.5rem"
               }}>
-                DIAGNOSTIC IMMÉDIAT
+                DÉPANNAGE EXPRESS & VACANCIERS
               </h3>
               <p style={{ fontSize: "0.88rem", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
-                Votre voyant moteur est allumé ? Venez directement. La valise est branchée sans vous faire attendre des semaines.
+                En panne sur la route de Castres (crevaison, pompe à eau, alternateur) ? Vincent fait tout pour vous dépanner au plus vite et sauver vos vacances.
               </p>
             </div>
 
@@ -113,10 +113,10 @@ export default function WhyUs() {
                 textTransform: "uppercase",
                 marginBottom: "0.5rem"
               }}>
-                DÉPLACEMENT À DOMICILE
+                RÉVISIONS COMPLÈTES & MOTEUR
               </h3>
               <p style={{ fontSize: "0.88rem", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
-                Batterie à plat ou panne immobilisante ? Déplacement possible chez vous à Bergerac pour vous éviter un remorquage coûteux.
+                Vidange, distribution, freins, embrayage : révision complète réalisée selon le carnet d&apos;entretien constructeur pour préserver la santé de votre véhicule.
               </p>
             </div>
 
@@ -144,10 +144,10 @@ export default function WhyUs() {
                 textTransform: "uppercase",
                 marginBottom: "0.5rem"
               }}>
-                TRANSPARENCE & SÉRIEUX
+                ACCUEIL SYMPA & PRIX RAISONNABLES
               </h3>
               <p style={{ fontSize: "0.88rem", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
-                Explications claires de la panne, pièces montrées avant travaux et devis transparent. Pas de mauvaises surprises.
+                Vincent vous accueille toujours chaleureusement. Explications claires, pièces montrées avant travaux et devis transparent : aucun surcoût injustifié.
               </p>
             </div>
 
@@ -168,7 +168,7 @@ export default function WhyUs() {
                   fontSize: "2rem",
                   marginBottom: "0.5rem"
                 }}>
-                  5.0 ★
+                  4.9 ★
                 </div>
                 <h3 style={{
                   fontFamily: "var(--font-display)",
@@ -178,20 +178,29 @@ export default function WhyUs() {
                   textTransform: "uppercase",
                   marginBottom: "0.5rem"
                 }}>
-                  SATISFACTION 100%
+                  48 AVIS VÉRIFIÉS GOOGLE
                 </h3>
                 <p style={{ fontSize: "0.88rem", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
-                  Un score parfait de 5/5 sur Google avec 7 avis vérifiés.
+                  Une réputation exemplaire bâtie sur la confiance, le sérieux et la satisfaction de nos clients.
                 </p>
               </div>
 
-              <a
-                href={site.phoneHref}
-                className="btn-primary"
-                style={{ marginTop: "1.25rem", padding: "0.65rem 1rem", fontSize: "0.85rem", width: "100%" }}
-              >
-                Contacter le mécanicien
-              </a>
+              <div style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <a
+                  href="#rdv"
+                  className="btn-primary"
+                  style={{ padding: "0.65rem 1rem", fontSize: "0.85rem", width: "100%", textAlign: "center" }}
+                >
+                  📅 Prendre RDV en ligne
+                </a>
+                <a
+                  href={site.phoneHref}
+                  className="btn-secondary"
+                  style={{ padding: "0.6rem 1rem", fontSize: "0.85rem", width: "100%", textAlign: "center" }}
+                >
+                  Appeler Vincent : {site.phoneDisplay}
+                </a>
+              </div>
             </div>
           </div>
 

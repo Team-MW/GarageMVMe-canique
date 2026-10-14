@@ -22,7 +22,7 @@ export default function Services() {
         }}>
           <div>
             <div className="slant-tag" style={{ marginBottom: "0.85rem" }}>
-              <span>NOS PRESTATIONS EN ATELIER & À DOMICILE</span>
+              <span>ATELIER MÉCANIQUE À CASTRES</span>
             </div>
             <h2 style={{
               fontFamily: "var(--font-display)",
@@ -32,16 +32,16 @@ export default function Services() {
               fontStyle: "italic",
               lineHeight: 1.1
             }}>
-              MÉCANIQUE DE PRÉCISION <span style={{ color: "var(--color-red)" }}>TOUTES MARQUES</span>
+              MÉCANIQUE GÉNÉRALE & <span style={{ color: "var(--color-red)" }}>RÉVISIONS COMPLÈTES</span>
             </h2>
           </div>
           <p style={{
             color: "var(--color-text-muted)",
-            maxWidth: "460px",
+            maxWidth: "480px",
             fontSize: "0.95rem",
             lineHeight: 1.6
           }}>
-            Des équipements professionnels et une approche minutieuse pour diagnostiquer et réparer votre véhicule sans perte de temps.
+            De l&apos;entretien constructeur à la réparation d&apos;urgence sur la route des vacances, Vincent prend soin de votre véhicule avec minutie et au juste prix.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function Services() {
                 </div>
                 <h3 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "1.3rem",
+                  fontSize: "1.25rem",
                   fontWeight: 800,
                   color: "#fff",
                   marginBottom: "0.75rem",
@@ -139,13 +139,37 @@ export default function Services() {
                 </div>
 
                 {/* Action CTA with pure CSS hover */}
-                <a
-                  href={site.phoneHref}
-                  className="service-cta"
-                >
-                  <span>Demander un tarif</span>
-                  <span>→</span>
-                </a>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
+                  <a
+                    href="#rdv"
+                    className="service-cta"
+                    style={{ justifyContent: "center", textAlign: "center" }}
+                  >
+                    <span>Prendre RDV</span>
+                  </a>
+                  <a
+                    href={site.phoneHref}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "5px",
+                      padding: "0.75rem",
+                      backgroundColor: "var(--color-red)",
+                      borderRadius: "6px",
+                      color: "#fff",
+                      fontWeight: 700,
+                      fontSize: "0.85rem",
+                      fontFamily: "var(--font-display)",
+                      textTransform: "uppercase"
+                    }}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                    <span>Appeler</span>
+                  </a>
+                </div>
               </div>
             </div>
           ))}

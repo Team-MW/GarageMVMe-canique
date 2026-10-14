@@ -24,6 +24,51 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Top Announcement Bar */}
+      <div style={{
+        background: "linear-gradient(90deg, #16181f 0%, #1f0d10 50%, #16181f 100%)",
+        borderBottom: "1px solid rgba(225, 29, 42, 0.25)",
+        padding: "0.45rem 1rem",
+        fontSize: "0.8rem",
+        color: "#f3f4f6",
+        textAlign: "center"
+      }}>
+        <div className="container" style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: "0.75rem"
+        }}>
+          <span style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "5px",
+            color: "#fbbf24",
+            fontWeight: 700
+          }}>
+            ★ {site.rating.score}/5 ({site.rating.reviewsCount} avis Google)
+          </span>
+          <span style={{ opacity: 0.5 }}>•</span>
+          <span style={{ color: "#fff" }}>
+            🚗 Dépannage express pour les <strong>vacanciers & gens de passage</strong> à Castres
+          </span>
+          <span style={{ opacity: 0.5 }}>•</span>
+          <a
+            href={site.phoneHref}
+            style={{
+              color: "#ff4d58",
+              fontWeight: 800,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px"
+            }}
+          >
+            <span>Appel direct Vincent : {site.phoneDisplay}</span>
+          </a>
+        </div>
+      </div>
+
       <header style={{
         position: "sticky",
         top: 0,
@@ -36,13 +81,13 @@ export default function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: "74px",
+          height: "76px",
         }}>
           {/* Logo */}
           <Link href="/" onClick={closeMenu} style={{ display: "flex", alignItems: "center", gap: "0.75rem", zIndex: 101 }}>
             <div style={{
-              width: "42px",
-              height: "42px",
+              width: "44px",
+              height: "44px",
               background: "linear-gradient(135deg, var(--color-red) 0%, #8a0c14 100%)",
               borderRadius: "6px",
               display: "flex",
@@ -50,19 +95,19 @@ export default function Navbar() {
               justifyContent: "center",
               fontWeight: 900,
               fontFamily: "var(--font-display)",
-              fontSize: "1.2rem",
+              fontSize: "1.25rem",
               color: "#fff",
               fontStyle: "italic",
-              boxShadow: "0 0 16px rgba(225, 29, 42, 0.4)",
+              boxShadow: "0 0 18px rgba(225, 29, 42, 0.45)",
               transform: "skewX(-6deg)"
             }}>
-              HM
+              MV
             </div>
             <div>
               <div style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 800,
-                fontSize: "1.2rem",
+                fontSize: "1.15rem",
                 lineHeight: 1.1,
                 letterSpacing: "0.04em",
                 color: "#fff",
@@ -70,70 +115,81 @@ export default function Navbar() {
                 alignItems: "center",
                 gap: "5px"
               }}>
-                HM AUTO <span style={{ color: "var(--color-red)" }}>24</span>
+                GARAGE MV <span style={{ color: "var(--color-red)" }}>MÉCANIQUE</span>
               </div>
               <div style={{
-                fontSize: "0.7rem",
+                fontSize: "0.72rem",
                 color: "var(--color-text-muted)",
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
+                letterSpacing: "0.05em",
                 fontWeight: 600
               }}>
-                Bergerac • Garage & Dépannage
+                Castres (81) • Atelier de Vincent
               </div>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+          <nav className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: "1.75rem" }}>
             <a href="#services" className="nav-link">
-              Services
+              Prestations
             </a>
-            <a href="#atouts" className="nav-link">
-              Pourquoi HM Auto
+            <a href="#urgence" className="nav-link">
+              Dépannage Urgence
+            </a>
+            <a href="#rdv" className="nav-link" style={{ color: "#ff858d", fontWeight: 700 }}>
+              Prendre RDV
             </a>
             <a href="#avis" className="nav-link">
-              Avis clients (5/5)
+              Avis (4,9/5)
             </a>
             <a href="#contact" className="nav-link">
               Horaires & Accès
             </a>
           </nav>
 
-          {/* Right Actions: Phone + Burger Button */}
+          {/* Right Actions: Big Call Button + Burger Button */}
           <div style={{ display: "flex", alignItems: "center", gap: "0.85rem" }}>
-            {/* Phone Button */}
+            {/* Desktop Action: Big Call Button */}
             <a
               href={site.phoneHref}
-              className="btn-primary desktop-phone-btn"
-              style={{ padding: "0.6rem 1.15rem", fontSize: "0.88rem" }}
+              className="btn-call-header desktop-phone-btn"
+              title="Appeler Vincent directement"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <span className="call-pulse-dot" />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
               </svg>
-              <span>{site.phoneDisplay}</span>
+              <div style={{ textAlign: "left", lineHeight: 1.15 }}>
+                <span style={{ fontSize: "0.7rem", opacity: 0.85, display: "block", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  Appeler Vincent
+                </span>
+                <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>{site.phoneDisplay}</span>
+              </div>
             </a>
 
             {/* Mobile Call Icon Quick Tap */}
             <a
               href={site.phoneHref}
               className="mobile-phone-quick"
-              title="Appeler directement"
+              title="Appeler Vincent"
               style={{
-                width: "42px",
                 height: "42px",
+                padding: "0 0.9rem",
                 borderRadius: "8px",
                 backgroundColor: "var(--color-red)",
                 color: "#fff",
                 display: "none",
                 alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 0 15px rgba(225, 29, 42, 0.4)"
+                gap: "6px",
+                fontWeight: 800,
+                fontSize: "0.82rem",
+                boxShadow: "0 0 15px rgba(225, 29, 42, 0.45)"
               }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
               </svg>
+              <span>Appeler</span>
             </a>
 
             {/* Hamburger Toggle Button */}
@@ -195,7 +251,7 @@ export default function Navbar() {
         className={`mobile-menu-drawer ${isOpen ? "open" : ""}`}
         style={{
           position: "fixed",
-          top: "74px",
+          top: "105px",
           left: 0,
           right: 0,
           bottom: 0,
@@ -215,13 +271,13 @@ export default function Navbar() {
         }}
       >
         {/* Navigation list */}
-        <nav style={{ display: "flex", flexDirection: "column", gap: "1.25rem", marginTop: "1rem" }}>
+        <nav style={{ display: "flex", flexDirection: "column", gap: "1.25rem", marginTop: "0.5rem" }}>
           <a
             href="#services"
             onClick={closeMenu}
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "1.5rem",
+              fontSize: "1.35rem",
               fontWeight: 800,
               textTransform: "uppercase",
               fontStyle: "italic",
@@ -229,20 +285,41 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              paddingBottom: "0.85rem",
+              paddingBottom: "0.75rem",
               borderBottom: "1px solid var(--color-border)"
             }}
           >
-            <span>Nos Services</span>
-            <span style={{ color: "var(--color-red)", fontSize: "1.2rem" }}>01</span>
+            <span>Prestations Atelier</span>
+            <span style={{ color: "var(--color-red)", fontSize: "1.1rem" }}>01</span>
           </a>
 
           <a
-            href="#atouts"
+            href="#urgence"
             onClick={closeMenu}
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "1.5rem",
+              fontSize: "1.35rem",
+              fontWeight: 800,
+              textTransform: "uppercase",
+              fontStyle: "italic",
+              color: "#ff707b",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              paddingBottom: "0.75rem",
+              borderBottom: "1px solid var(--color-border)"
+            }}
+          >
+            <span>Dépannage Rapide Vacanciers</span>
+            <span style={{ color: "var(--color-red)", fontSize: "1.1rem" }}>02</span>
+          </a>
+
+          <a
+            href="#rdv"
+            onClick={closeMenu}
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "1.35rem",
               fontWeight: 800,
               textTransform: "uppercase",
               fontStyle: "italic",
@@ -250,12 +327,12 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              paddingBottom: "0.85rem",
+              paddingBottom: "0.75rem",
               borderBottom: "1px solid var(--color-border)"
             }}
           >
-            <span>Pourquoi HM Auto 24</span>
-            <span style={{ color: "var(--color-red)", fontSize: "1.2rem" }}>02</span>
+            <span>Prendre Rendez-vous en Ligne</span>
+            <span style={{ color: "var(--color-red)", fontSize: "1.1rem" }}>03</span>
           </a>
 
           <a
@@ -263,7 +340,7 @@ export default function Navbar() {
             onClick={closeMenu}
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "1.5rem",
+              fontSize: "1.35rem",
               fontWeight: 800,
               textTransform: "uppercase",
               fontStyle: "italic",
@@ -271,12 +348,12 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              paddingBottom: "0.85rem",
+              paddingBottom: "0.75rem",
               borderBottom: "1px solid var(--color-border)"
             }}
           >
-            <span>Avis Clients (5/5)</span>
-            <span style={{ color: "var(--color-red)", fontSize: "1.2rem" }}>03</span>
+            <span>Avis Clients (4,9/5 - 48 avis)</span>
+            <span style={{ color: "var(--color-red)", fontSize: "1.1rem" }}>04</span>
           </a>
 
           <a
@@ -284,7 +361,7 @@ export default function Navbar() {
             onClick={closeMenu}
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "1.5rem",
+              fontSize: "1.35rem",
               fontWeight: 800,
               textTransform: "uppercase",
               fontStyle: "italic",
@@ -292,27 +369,45 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              paddingBottom: "0.85rem",
+              paddingBottom: "0.75rem",
               borderBottom: "1px solid var(--color-border)"
             }}
           >
-            <span>Horaires & Accès</span>
-            <span style={{ color: "var(--color-red)", fontSize: "1.2rem" }}>04</span>
+            <span>Horaires & Accès (Castres)</span>
+            <span style={{ color: "var(--color-red)", fontSize: "1.1rem" }}>05</span>
           </a>
         </nav>
 
         {/* Drawer Footer Actions */}
-        <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
           {/* Big Direct Call Button */}
           <a
             href={site.phoneHref}
             className="btn-primary"
-            style={{ width: "100%", padding: "1.1rem", fontSize: "1.05rem", textAlign: "center" }}
+            style={{
+              width: "100%",
+              padding: "1.1rem",
+              fontSize: "1.05rem",
+              textAlign: "center",
+              display: "flex",
+              justifyContent: "center",
+              boxShadow: "0 0 25px rgba(225, 29, 42, 0.6)"
+            }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
               <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z" />
             </svg>
-            <span>Appeler le {site.phoneDisplay}</span>
+            <span>Appeler Vincent : {site.phoneDisplay}</span>
+          </a>
+
+          {/* Online booking shortcut */}
+          <a
+            href="#rdv"
+            onClick={closeMenu}
+            className="btn-secondary"
+            style={{ width: "100%", padding: "0.9rem", textAlign: "center", fontSize: "0.95rem" }}
+          >
+            📅 Prendre un Rendez-vous en Ligne
           </a>
 
           {/* GPS Route Button */}
@@ -321,31 +416,24 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMenu}
-            className="btn-secondary"
-            style={{ width: "100%", padding: "0.9rem", textAlign: "center", fontSize: "0.95rem" }}
+            style={{
+              width: "100%",
+              padding: "0.75rem",
+              textAlign: "center",
+              fontSize: "0.85rem",
+              color: "var(--color-text-muted)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "6px"
+            }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
               <circle cx="12" cy="9" r="2.5" />
             </svg>
-            <span>Itinéraire : 39 Route Pierre Pinson</span>
+            <span>49 Chemin des Meules, Castres</span>
           </a>
-
-          {/* Opening Hours Info in Drawer */}
-          <div style={{
-            background: "rgba(255, 255, 255, 0.03)",
-            border: "1px solid var(--color-border)",
-            borderRadius: "8px",
-            padding: "0.85rem 1rem",
-            fontSize: "0.82rem",
-            color: "var(--color-text-muted)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center"
-          }}>
-            <span>Lun–Ven 9h–19h • Sam 9h–14h</span>
-            <span style={{ color: "#10b981", fontWeight: 700 }}>● Ouvert</span>
-          </div>
         </div>
       </div>
     </>
